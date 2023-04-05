@@ -1,3 +1,6 @@
+<?php
+    include('server/controller_produk.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,21 +44,21 @@
       <div class="card d-flex justify-content-center">
         <div class="container">
           <h4>Total Produk</h4>
-          <p style="color: #699BF7;">150</p>
+          <p style="color: #699BF7;"><?php echo $count_jenis?></p>
         </div>
       </div>
     </div>
     <div class="card1">
       <div class="container1">
-        <h4>Jumlah Barang</h4>
-        <p style="color: #699BF7;">150</p>
+        <h4>Jenis Barang</h4>
+        <p style="color: #699BF7;"><?php echo $count_jeniz?></p>
       </div>
     </div>
   </div>
   <div class="card2">
     <div class="container2">
       <h4>Total Barang</h4>
-      <p style="color: #699BF7;">150</p>
+      <p style="color: #699BF7;"><?php echo $sum?></p>
     </div>
   </div>
 </div>
@@ -85,11 +88,12 @@
 		</tr>
 	</thead>
 	<tbody>
+        <?php while($row = $products->fetch_assoc()){?>
 		<tr>
-			<td>1</td>
-			<td>Matras Yoga NIke</td>
-			<td>Matras Olahraga</td>
-			<td>10</td>
+			<td><?php echo $row['id_produk'];?></td>
+			<td><?php echo $row['nama_produk'];?></td>
+			<td><?php echo $row['jenis_produk'];?></td>
+			<td><?php echo $row['jumlah_produk'];?></td>
 			<td>
         <div class="dropdown">
           <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
@@ -100,37 +104,7 @@
         </div>
 			</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>Rinnai 180x120</td>
-			<td>Spring Bed</td>
-			<td>20</td>
-			<td>
-				<div class="dropdown">
-          <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
-          <div class="dropdown-content">
-            <a href="#">Edit</a>
-            <a href="#">Hapus Produk</a>
-          </div>
-        </div>
-      </td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Fitness Matras</td>
-			<td>Matras Olahraga</td>
-			<td>90</td>
-      <td>
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
-        <div class="dropdown-content">
-          <a href="#">Edit</a>
-          <a href="#">Hapus Produk</a>
-        </div>
-      </div>
-      </td>
-		</tr>
-    
+        <?php } ?>
 	</tbody>
 </table>
 
