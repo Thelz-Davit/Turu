@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <title>Register</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-</head>
-<body>
-    <script src="js/bootstrap.js"></script>
-    <div class="box">
-        <div class="container">
-            <div class="top">
-                <span>REGISTER</span>
-            </div>
+  </head>
+  <body>
+    <div class="background"></div>
 
-            <form action="action.php" method="post">
-                <div class="mb-3">
-                    <label for="" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="">
-                    <i class="bx bx-user"></i>
-                  </div>
-                <div class="mb-3">
-                  <label for="" class="form-label">Email</label>
-                  <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
-                  <i class="bx bx-envelope"></i>
-                </div>
-                <div class="mb-3">
-                  <label for="" class="form-label">Password</label>
-                  <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
-                  <i class="bx bx-key"></i>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="login.php" class="btn btn-primary" role="button">Login</a>
-            </form>
+    <center>
+      <div class="form-box">
+        <form class="form">
+          <span class="title">Sign Up</span>
+          <span class="subtitle">Buat Akun Baru.</span>
+          <div class="form-container">
+            <input type="text" class="input" placeholder="Username" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+            <input type="notelpon" class="input" placeholder="PhoneNumber" />
+          </div>
+          <button>Sign up</button>
+        </form>
+        <div class="form-section">
+          <p>
+            Sudah Memiliki Akun?<a href="Login.php" class="link-primary"
+              >Login</a
+            >
+          </p>
         </div>
-    </div>
-    
-    
-</body>
+      </div>
+    </center>
+  </body>
 </html>
