@@ -13,14 +13,14 @@
 
     <center>
       <div class="form-box">
-        <form class="form">
+        <form class="form" action="action.php" method="post">
           <span class="title">Sign Up</span>
           <span class="subtitle">Buat Akun Baru.</span>
           <div class="form-container">
-            <input type="text" class="input" placeholder="Username" />
-            <input type="email" class="input" placeholder="Email" />
-            <input type="password" class="input" placeholder="Password" />
-            <input type="notelpon" class="input" placeholder="PhoneNumber" />
+            <input type="text" class="input" placeholder="Username" name="username"/>
+            <input type="email" class="input" placeholder="Email" name="email" />
+            <input type="password" class="input" placeholder="Password" name="password"/>
+            <input type="number" class="input" placeholder="PhoneNumber" name="no_telepon"/>
           </div>
           <button>Sign up</button>
         </form>

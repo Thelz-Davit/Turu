@@ -8,8 +8,8 @@
     }
 
     if (isset($_POST['login_btn'])) {
-        $email = $_POST['user_email'];
-        $password = ($_POST['user_password']);
+        $email = $_POST['email'];
+        $password = ($_POST['password']);
 
         $query = "SELECT id_admin, username, email, password, no_telepon FROM admin
         WHERE email = ? AND password = ? LIMIT 1";
@@ -18,17 +18,17 @@
         $stmt_login->bind_param('ss', $email, $password);
         
         if ($stmt_login->execute()) {
-            $stmt_login->bind_result($id_admin, $username, $user_email, $user_password, 
+            $stmt_login->bind_result($id_admin, $username, $email, $password, 
             $no_telepon);
             $stmt_login->store_result();
 
             if ($stmt_login->num_rows() == 1) {
                 $stmt_login->fetch();
 
-                $_SESSION['user_id'] = $id_admin;
-                $_SESSION['user_name'] = $username;
-                $_SESSION['user_email'] = $useremail;
-                $_SESSION['user_phone'] = $telepon;
+                $_SESSION['id_admin'] = $id_admin;
+                $_SESSION['username'] = $username;
+                $_SESSION['email'] = $email;
+                $_SESSION['no_telepon'] = $no_telepon;
                 $_SESSION['logged_in'] = true;
                 
                 header('location:dashboard.php?message=Logged in successfully');
@@ -62,16 +62,21 @@
     <div class="background"></div>
   <center>
       <div class="form-box">
-        <form class="form">
+        <form class="form" id="login-form" action="login.php" method="post">
+        <?php if (isset($_GET['error'])) ?>
+                    <div role="alert">
+                        <?php if (isset($_GET['error'])) {
+                            echo $_GET['error'];
+                    } ?>
           <span class="title">Login</span>
           <div class="form-container">
-            <input type="email" class="input" placeholder="Email" />
-            <input type="password" class="input" placeholder="Password" />
+            <input type="email" class="input" placeholder="Email" name="email"/>
+            <input type="password" class="input" placeholder="Password" name="password"/>
           </div>
-          <button>Login</button>
+          <button name="login_btn" type="submit" value="LOGIN">Login</button>
         </form>
         <div class="form-section">
-          <p>Belum Memiliki Akun? <a href="Register.php" class="link-primary"
+          <p>Belum Memiliki Akun? <a href="Register.html" class="link-primary"
               >Register</a</p>
         </div>
       </div>
