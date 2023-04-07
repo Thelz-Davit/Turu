@@ -255,12 +255,19 @@ table{
   position: fixed;
   margin-left: 10cm;
   margin-top: 8cm;
+  overflow: auto;
+  display: block;
+  height: 250px;
+  width: 100%;
 }
+
 th{
   text-align: center;
+  
 }
 td{
   text-align: center;
+  width: 12cm;
 }
 
 /* Dropdown Button */
@@ -304,3 +311,18 @@ td{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #D9EDF9;}
+
+.caption{
+  padding:3cm 23cm 5cm 2cm;
+  position: absolute;
+  font-size: larger;
+  
+
+}
+.logo-welcome{
+  width: 35%;
+  padding-right: cm;
+  
+}
+
+
