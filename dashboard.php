@@ -101,8 +101,8 @@
         <div class="dropdown">
           <button class="dropbtn"><i class="fas fa-ellipsis-v"></i></button>
           <div class="dropdown-content">
-            <a href="#">Edit</a>
-            <a href="#">Hapus Produk</a>
+            <?php echo "<a href='edit_produk.php?id_produk=$row[id_produk]'>Edit</a>"?>
+            <?php echo "<a href='delete_produk.php?id_produk=$row[id_produk]'>Delete</a>"?>
           </div>
         </div>
 			</td>

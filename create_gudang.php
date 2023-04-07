@@ -1,3 +1,13 @@
+<?php
+  include('server/connection.php');
+
+  if(isset($_POST['submit'])){
+    $nama_gudang = $_POST['nama_gudang'];
+
+    $sql = "INSERT INTO gudang VALUES('','$nama_gudang')";
+    $result = mysqli_query($conn, $sql);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,9 +46,9 @@
                 Menu
             </div>
             <ul class="list-items" >
-               <li ><a href="#"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
+               <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
                <li><a href="#"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
-               <li><a href="#"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
+               <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
               
             </ul>
          </nav>
@@ -46,7 +56,7 @@
       <div class="header mt-5 ms-5">
       <h3>Input Gudang Baru</h3>
     </div>
-    <form>
+    <form action="create_gudang.php" method="post">
       <div class="d-flex justify-content-center">
         <div class="form-outline w-50">
           <label for="exampleInputEmail1" class="form-label ">Nama Gudang</label>
@@ -55,11 +65,12 @@
             class="form-control "
             id="exampleInputGudang"
             aria-describedby="GudangHelp"
+            name="nama_gudang"
           />
           </div>
         </div>
         <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary mt-3 form-outline w-25">Simpan</button>
+        <button type="submit" class="btn btn-primary mt-3 form-outline w-25" name="submit">Simpan</button>
        </div>
   </body>
 </html>
