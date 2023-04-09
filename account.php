@@ -13,7 +13,7 @@
             unset($_SESSION['email']);
             unset($_SESSION['username']);
             unset($_SESSION['no_telepon']);
-            header('location: login.php');
+            header('location: welcome.php');
             exit;
         }
     }
@@ -41,7 +41,7 @@
           ><img src="image/turu.png" alt="" width="120" 
         /></a>
         <form class="d-flex">
-        <a href="create_produk.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
+        <a href="account.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
         </form>
       </div>
     </nav>

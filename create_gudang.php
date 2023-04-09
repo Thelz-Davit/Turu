@@ -1,6 +1,25 @@
 <?php
   include('server/connection.php');
 
+  session_start();
+    include('server/connection.php');
+
+    if (!isset($_SESSION['logged_in'])) {
+        header('location: login.php');
+        exit;
+    }
+
+    if (isset($_GET['logout'])) {
+        if (isset($_SESSION['logged_in'])) {
+            unset($_SESSION['logged_in']);
+            unset($_SESSION['email']);
+            unset($_SESSION['username']);
+            unset($_SESSION['no_telepon']);
+            header('location: welcome.php');
+            exit;
+        }
+      }
+
   if(isset($_POST['submit'])){
     $nama_gudang = $_POST['nama_gudang'];
 

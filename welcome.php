@@ -17,7 +17,7 @@ include('server/connection.php');
     href="bootstrap-5.2.3-dist/css/bootstrap.css"
   />
     <link rel="stylesheet" href="dashboard.css" />
-    <link rel="stylesheet" href="welcome.css" />
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
@@ -37,7 +37,7 @@ include('server/connection.php');
         <p>TURU merupakan sebuah gudang yang dirancang khusus untuk menyimpan dan mendistribusikan berbagai jenis matras. Gudang matras kami dilengkapi dengan sistem penyimpanan yang terorganisir dengan baik, dan memiliki fasilitas pengangkutan dan pengiriman yang efisien, yang memungkinkan produk matras untuk dikirimkan ke berbagai lokasi dengan cepat dan aman.<p>
         <h5><i>"kami adalah gudang mengturu abadi yang terpercaya"</i></h5>
       </div>
-        <img align="right" src="image/child.png" alt="" class="logo-welcome" >
+        <img align="right" src="image/child1.png" alt="" class="logo-welcome" style="width: 50%;" >
           <div id="carouselId" class="carousel slide" data-bs-ride="carousel" align="center">
             <ol class="carousel-indicators">
               <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>

@@ -15,7 +15,7 @@
             unset($_SESSION['email']);
             unset($_SESSION['username']);
             unset($_SESSION['no_telepon']);
-            header('location: login.php');
+            header('location: welcome.php');
             exit;
         }
 }

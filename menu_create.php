@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    include('server/connection.php');
+    
+    if (!isset($_SESSION['logged_in'])) {
+        header('location: login.php');
+        exit;
+    }
+
+    if (isset($_GET['logout'])) {
+        if (isset($_SESSION['logged_in'])) {
+            unset($_SESSION['logged_in']);
+            unset($_SESSION['email']);
+            unset($_SESSION['username']);
+            unset($_SESSION['no_telepon']);
+            header('location: welcome.php');
+            exit;
+        }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,16 +41,12 @@
           ><img src="image/turu.jpg" alt="" height="" width="120" 
         /></a>
         <form class="d-flex">
-          <button type="button" class="btn me-4" style="background-color: #C96060;">LogOut</button>
+        <a href="menu_create.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
         </form>
       </div>
     </nav>
     <div class="wrapper">
          <input type="checkbox" id="btn" hidden>
-         <!-- <label for="btn" class="menu-btn">
-         <i class="fas fa-bars"></i>
-         <i class="fas fa-times"></i>
-         </label> -->
          <nav id="sidebar">
             <div class="title">
                 Menu
