@@ -6,6 +6,11 @@
     $sql = "SELECT * FROM produk WHERE id_produk = $id_produk";
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_assoc($result);
+
+    $sql = "SELECT * FROM gudang";
+    $stmt_gudang = $conn->prepare($sql);
+    $stmt_gudang->execute();
+    $gudangs = $stmt_gudang->get_result();
 ?>
 <?php
 
@@ -15,8 +20,9 @@
     $nama_produk = $_POST['nama_produk'];
     $jenis_produk = $_POST['jenis_produk'];
     $jumlah_produk = $_POST['jumlah_produk'];
+    $gudang = $_POST['gudang'];
 
-    $sql = "UPDATE produk SET nama_produk = '$nama_produk', jenis_produk='$jenis_produk', jumlah_produk=$jumlah_produk WHERE id_produk=$id_produk";
+    $sql = "UPDATE produk SET nama_produk = '$nama_produk', jenis_produk='$jenis_produk', jumlah_produk=$jumlah_produk,id_gudang = $gudang WHERE id_produk=$id_produk";
     $result = mysqli_query($conn, $sql);
     if($result){
         header('Location:dashboard.php');
@@ -64,7 +70,7 @@
          </div>
          <ul class="list-items" >
             <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
-            <li><a href="create_produk.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
+            <li><a href="menu_create.php.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
             <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
            
          </ul>
@@ -111,11 +117,11 @@
         </div>
        </div>
        <div class="d-flex justify-content-center">
-        <select class="form-select mt-4 form-outline w-50" aria-label="Default select example">
-          <option selected>Plilih Gudang</option>
-          <option value="1">Gudang 1</option>
-          <option value="2">Gudang 2</option>
-          <option value="3">Gudang 3</option>
+        <select class="form-select mt-4 form-outline w-50" aria-label="Default select example" name="gudang">
+          <<option selected>Plilih Gudang</option>
+          <?php while($row = $gudangs->fetch_assoc()){?>
+          <option value="<?php echo $row['id_gudang'];?>"><?php echo $row['nama_gudang'];?></option>
+          <?php } ?>
          </select>
        </div>
       
