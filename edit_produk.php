@@ -60,10 +60,6 @@
     </nav>
     <div class="wrapper">
       <input type="checkbox" id="btn" hidden>
-      <!-- <label for="btn" class="menu-btn">
-      <i class="fas fa-bars"></i>
-      <i class="fas fa-times"></i>
-      </label> -->
       <nav id="sidebar">
          <div class="title">
              Menu
@@ -71,7 +67,7 @@
          <ul class="list-items" >
             <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
             <li><a href="menu_create.php.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
-            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
+            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Settings</a></li>
            
          </ul>
       </nav>

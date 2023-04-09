@@ -35,7 +35,7 @@ include('server/connection.php');
       <div class="caption">
         <h1>Selamat Datang</h1>
         <p>TURU merupakan sebuah gudang yang dirancang khusus untuk menyimpan dan mendistribusikan berbagai jenis matras. Gudang matras kami dilengkapi dengan sistem penyimpanan yang terorganisir dengan baik, dan memiliki fasilitas pengangkutan dan pengiriman yang efisien, yang memungkinkan produk matras untuk dikirimkan ke berbagai lokasi dengan cepat dan aman.<p>
-        <h5><i>"kami adalah gudang mengturu abadi yang terpercaya"</i></h5>
+        <h5><i>"Kami adalah gudang mengturu abadi yang terpercaya"</i></h5>
       </div>
         <img align="right" src="image/child1.png" alt="" class="logo-welcome" style="width: 50%;" >
           <div id="carouselId" class="carousel slide" data-bs-ride="carousel" align="center">
