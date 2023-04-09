@@ -38,7 +38,7 @@
     <nav class="navbar navbar-light" style="background-color:  #B7E0FF">
       <div class="container-fluid">
         <a class="navbar-brand me-5"
-          ><img src="image/WhatsApp_Image_2023-03-26_at_18_03_06-transformed.png" alt="" width="120" 
+          ><img src="image/turu.png" alt="" width="120" 
         /></a>
         <form class="d-flex">
         <a href="create_produk.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
@@ -58,7 +58,7 @@
          <ul class="list-items" >
             <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
             <li><a href="create_produk.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
-            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
+            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Settings</a></li>
            
          </ul>
       </nav>

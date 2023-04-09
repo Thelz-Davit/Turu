@@ -5,10 +5,17 @@
     $nama_produk = $_POST['nama_produk'];
     $jenis_produk = $_POST['jenis_produk'];
     $jumlah_produk = $_POST['jumlah_produk'];
+    $gudang = $_POST['gudang'];
 
-    $sql = "INSERT INTO produk VALUES('','$nama_produk','$jenis_produk',$jumlah_produk)";
+    $sql = "INSERT INTO produk VALUES('','$nama_produk','$jenis_produk',$jumlah_produk,$gudang)";
     $result = mysqli_query($conn, $sql);
   }
+?>
+<?php
+  $sql = "SELECT * FROM gudang";
+  $stmt_gudang = $conn->prepare($sql);
+  $stmt_gudang->execute();
+  $gudangs = $stmt_gudang->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,11 +100,11 @@
         </div>
        </div>
        <div class="d-flex justify-content-center">
-        <select class="form-select mt-4 form-outline w-50" aria-label="Default select example">
+        <select class="form-select mt-4 form-outline w-50" aria-label="Default select example" name="gudang">
           <option selected>Plilih Gudang</option>
-          <option value="1">Gudang 1</option>
-          <option value="2">Gudang 2</option>
-          <option value="3">Gudang 3</option>
+          <?php while($row = $gudangs->fetch_assoc()){?>
+          <option value="<?php echo $row['id_gudang'];?>"><?php echo $row['nama_gudang'];?></option>
+          <?php } ?>
          </select>
        </div>
       
