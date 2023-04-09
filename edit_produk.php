@@ -48,7 +48,7 @@
           ><img src="image/turu.jpg" alt="" width="120" 
         /></a>
         <form class="d-flex">
-          <button type="button" class="btn me-4" style="background-color: #C96060;">LogOut</button>
+        <a href="edit_produk.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
         </form>
       </div>
     </nav>
@@ -65,7 +65,7 @@
          <ul class="list-items" >
             <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
             <li><a href="create_produk.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
-            <li><a href="#"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
+            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
            
          </ul>
       </nav>
