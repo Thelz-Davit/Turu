@@ -1,5 +1,24 @@
 <?php
     include('server/controller_produk.php');
+
+    session_start();
+    include('server/connection.php');
+
+    if (!isset($_SESSION['logged_in'])) {
+        header('location: login.php');
+        exit;
+    }
+
+    if (isset($_GET['logout'])) {
+        if (isset($_SESSION['logged_in'])) {
+            unset($_SESSION['logged_in']);
+            unset($_SESSION['email']);
+            unset($_SESSION['username']);
+            unset($_SESSION['no_telepon']);
+            header('location: login.php');
+            exit;
+        }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +45,7 @@
           ><img src="image/turu.png" alt="" height="" width="120" 
         /></a>
         <form class="d-flex">
-          <button type="button" class="btn me-4" style="background-color: #C96060;">LogOut</button>
+          <a href="dashboard.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
         </form>
       </div>
     </nav>
