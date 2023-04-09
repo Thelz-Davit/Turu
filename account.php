@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    include('server/connection.php');
+
+    if (!isset($_SESSION['logged_in'])) {
+        header('location: login.php');
+        exit;
+    }
+
+    if (isset($_GET['logout'])) {
+        if (isset($_SESSION['logged_in'])) {
+            unset($_SESSION['logged_in']);
+            unset($_SESSION['email']);
+            unset($_SESSION['username']);
+            unset($_SESSION['no_telepon']);
+            header('location: login.php');
+            exit;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,9 +75,9 @@
             </div>
             <div class="card d-flex justify-content-center">
               <div class="container">
-                <h4>Tri Rahayu Purwanti</h4>
-                <h4>Tri@gmail.com</h4>
-                <h4>08559794535</h4>
+                <h4><?php echo $_SESSION['username']?></h4>
+                <h4><?php echo $_SESSION['email']?></h4>
+                <h4><?php echo $_SESSION['no_telepon']?></h4>
               </div>
             </div>
         </section>
