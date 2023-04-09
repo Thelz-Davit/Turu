@@ -62,12 +62,8 @@
     <div class="background"></div>
   <center>
       <div class="form-box">
+        <?php include('server/controller_login.php')?>
         <form class="form" id="login-form" action="login.php" method="post">
-        <?php if (isset($_GET['error'])) ?>
-                    <div role="alert">
-                        <?php if (isset($_GET['error'])) {
-                            echo $_GET['error'];
-                    } ?>
           <span class="title">Login</span>
           <div class="form-container">
             <input type="email" class="input" placeholder="Email" name="email"/>
