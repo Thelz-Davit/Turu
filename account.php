@@ -41,7 +41,7 @@
           ><img src="image/WhatsApp_Image_2023-03-26_at_18_03_06-transformed.png" alt="" width="120" 
         /></a>
         <form class="d-flex">
-          <button type="button" class="btn me-4" style="background-color: #C96060;">LogOut</button>
+        <a href="create_produk.php?logout=1" name="logout" class="btn me-4" style="background-color: #C96060;">Logout</a>
         </form>
       </div>
     </nav>
@@ -56,9 +56,9 @@
              Menu
          </div>
          <ul class="list-items" >
-            <li ><a href="#"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
-            <li><a href="inputProduk.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
-            <li><a href="#"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
+            <li ><a href="dashboard.php"><i class="fas fa-th-large" style="color: #699BF7;"></i>Dashboard</a></li>
+            <li><a href="create_produk.php"><i class="fas fa-plus-square" style="color: #699BF7;"></i>Tambah Baru</a></li>
+            <li><a href="account.php"><i class=" fas fa-sliders-h" style="color: #699BF7;"></i>Setting</a></li>
            
          </ul>
       </nav>
@@ -66,7 +66,7 @@
     <div class="header mt-5 ms-5">
     <section>
             <h1 class="d-flex justify-content-center" style="margin-left: 6cm;">Settings</h1>
-            <img class="Image-Profile" src ="image/WhatsApp Image 2023-03-26 at 19.24.22.jpeg">
+            <img class="Image-Profile" src ="image/avatar.jpg">
             <div class="container"></div>
             <div class="card-one">
                 <div class="profile"></div>

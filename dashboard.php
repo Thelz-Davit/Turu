@@ -66,14 +66,14 @@
       <div class="card d-flex justify-content-center">
         <div class="container">
           <h4>Total Produk</h4>
-          <p style="color: #699BF7;"><?php echo $count_jenis?></p>
+          <p style="color: #699BF7;"><?php echo $count_produk?></p>
         </div>
       </div>
     </div>
     <div class="card1">
       <div class="container1">
         <h4>Jenis Barang</h4>
-        <p style="color: #699BF7;"><?php echo $count_jeniz?></p>
+        <p style="color: #699BF7;"><?php echo $count_jenis?></p>
       </div>
     </div>
   </div>
@@ -145,58 +145,5 @@
   $(this).show();
  });
  });
-});
-</script>
-<script>
-$(function() {
-  //initial variables
-  var numRows = $('#tableProduk').find('tr').length;
-  var SHOWN = 5;
-  var MORE = 20;
-
-  //get how many more can be shown
-  var getNumMore = function(ns) {
-      var more = MORE;
-      var leftOver = numRows - ns;
-      if ((leftOver) < more) {
-        more = leftOver;
-      }
-      return more;
-    }
-    // how many are shown /
-  var getInitialNumShown = function() {
-      var shown = SHOWN;
-      if (numRows < shown) {
-        shown = numRows;
-      }
-      return shown;
-    }
-    // set how many are initially shown /
-  var numShown = getInitialNumShown();
-
-  // set the numMore if less than 20 /
-  var numMore = getNumMore(numShown);
-
-  // set more html /
-  if (numMore > 0) {
-    var more_html = '<p><button id="more">Show <span style="font-weight: bold;">' + numMore + '</span> More...</button></p>';
-    $('#tableProduk').find('tr:gt(' + (numShown - 1) + ')').hide().end().after(more_html);
-  }
-  $('#more').click(function() {
-    // determine how much more we should update /
-    numMore = getNumMore(numShown);
-    // update num shown /
-    numShown = numShown + numMore;
-    $('#tableProduk').find('tr:lt(' + numShown + ')').show();
-
-    // determine if to show more and how much left over */
-    numMore = getNumMore(numShown);
-    if (numMore > 0) {
-      $('#more span').html(numMore);
-    } else {
-      $('#more').remove();
-    }
-  });
-
 });
 </script>
