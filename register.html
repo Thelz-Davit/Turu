@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <center>
+      <div class="form-box">
+        <form class="form" action="action.php" method="post">
+          <span class="title">Sign Up</span>
+          <span class="subtitle">Buat Akun Baru.</span>
+          <div class="form-container">
+            <input type="text" class="input" placeholder="Username" name="username" required/>
+            <input type="email" class="input" placeholder="Email" name="email" required/>
+            <input type="password" class="input" placeholder="Password" name="password" required/>
+            <input type="text" class="input" placeholder="PhoneNumber" name="no_telepon" required/>
+          </div>
+          <button>Sign up</button>
+        </form>
+        <div class="form-section">
+          <p>
+            Sudah Memiliki Akun?<a href="Login.php" class="link-primary"
+              >Login</a
+            >
+          </p>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
