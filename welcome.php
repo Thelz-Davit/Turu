@@ -1,23 +1,6 @@
 <?php
-session_start();
 include('server/connection.php');
-
-if (!isset($_SESSION['logged_in'])) {
-    header('location: login.php');
-    exit;
-}
-
-if (isset($_GET['logout'])) {
-    if (isset($_SESSION['logged_in'])) {
-        unset($_SESSION['logged_in']);
-        unset($_SESSION['user_email']);
-        unset($_SESSION['user_name']);
-        unset($_SESSION['user_photo']);
-        header('location: login.php');
-        exit;
-    }
-}
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +28,7 @@ if (isset($_GET['logout'])) {
           ><img src="image/turu.png" alt="" height="" width="120" 
         /></a>
         <form class="d-flex">
-          <button type="button" class="btn me-4" style="background-color: #547DFF; color: white;">Login</button>
+          <a href="login.php" class="btn me-4" style="background-color: #547DFF; color: white;">Login</a>
         </form>
       </div>
     </nav>
